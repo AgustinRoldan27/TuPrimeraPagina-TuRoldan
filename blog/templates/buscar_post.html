@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Buscar Post</h1>
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+    {% if posts %}
+        <h2>Resultados de la búsqueda:</h2>
+        <ul>
+            {% for post in posts %}
+                <li>{{ post.titulo }} - {{ post.autor }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
